@@ -1,21 +1,39 @@
 package com.platzi.javatests.util;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class PasswordUtilTest {
 
     @Test
     public void testSetPasswordWeak_GivenWeakPassword_ShouldReturnLowEightLetters() {
-        assertEquals(PasswordUtil.SecurityLevel.WEAK, PasswordUtil.assessPassword("1212!"));
+        //Arrange
+        PasswordUtil.SecurityLevel expectedResult = PasswordUtil.SecurityLevel.WEAK;
+        String assessmentValue = "1212!";
+        //Act
+        PasswordUtil.SecurityLevel actualResult = PasswordUtil.assessPassword(assessmentValue);
+        //Assert
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testSetPasswordMedium_GivenLetterAndNumbers_ShouldReturnLettersAndNumbers() {
-        assertEquals(PasswordUtil.SecurityLevel.MEDIUM, PasswordUtil.assessPassword("abcd1234asa"));
+        //Arrange
+        PasswordUtil.SecurityLevel expectedResult = PasswordUtil.SecurityLevel.MEDIUM;
+        String assessmentValue = "abcd1234asa";
+        //Act
+        PasswordUtil.SecurityLevel actualResult = PasswordUtil.assessPassword(assessmentValue);
+        //Assert
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testSetPasswordMedium_GivenNumbersAndSymbols_ShouldReturnNumbersAndSymbols() {
-        assertEquals(PasswordUtil.SecurityLevel.STRONG, PasswordUtil.assessPassword("abcd1234!"));
+        //Arrange
+        PasswordUtil.SecurityLevel expectedResult = PasswordUtil.SecurityLevel.STRONG;
+        String assessmentValue = "abcd1234!";
+        //Act
+        PasswordUtil.SecurityLevel actualResult = PasswordUtil.assessPassword(assessmentValue);
+        //Assert
+        Assert.assertEquals(expectedResult, actualResult);
     }
 }

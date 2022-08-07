@@ -7,22 +7,46 @@ public class StringUtilTest {
 
     @Test
     public void testRepeat_GiveOneHello_ShouldOnceHello(){
-        Assert.assertEquals("Hello", StringUtil.repeat("Hello",1));
+        //Arrange
+        String expectedResult = "Hello";
+        String assessmentValue = "Hello";
+        int times = 1;
+        //Act
+        String actualResult = StringUtil.repeat(assessmentValue, times);
+        //Assert
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testRepeat_GiveMultipleHello_ShouldMultipleHelloTimes(){
-        Assert.assertEquals("HelloHelloHello", StringUtil.repeat("Hello",3));
+        //Arrange
+        String expectedResult = "HelloHelloHello";
+        String assessmentValue = "Hello";
+        int times = 3;
+        //Act
+        String actualResult = StringUtil.repeat(assessmentValue, times);
+        //Assert
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testRepeat_GiveVoid_ShouldZeroTimes(){
-        Assert.assertEquals("", StringUtil.repeat("Hello",0));
-
+        //Arrange
+        String expectedResult = "";
+        String assessmentValue = "Hello";
+        int times = 0;
+        //Act
+        String actualResult = StringUtil.repeat(assessmentValue, times);
+        //Assert
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testRepeat_GiveNegative_ShouldNegativeTimes(){
-        StringUtil.repeat("Hello",-1);
+        //Arrange
+        String assessmentValue = "Hello";
+        int times = -1;
+        //Act
+        StringUtil.repeat(assessmentValue, times);
     }
 }
