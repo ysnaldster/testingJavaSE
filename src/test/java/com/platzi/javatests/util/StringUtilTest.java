@@ -49,4 +49,34 @@ public class StringUtilTest {
         //Act
         StringUtil.repeat(assessmentValue, times);
     }
+
+    @Test
+    public void testIsEmpty_GivenNullValue_ShouldReturnVoid() {
+        //Arrange
+        Boolean expectedResult = true;
+        //Act, //Assert
+        Assert.assertEquals(StringUtil.isEmpty(null), expectedResult);
+    }
+
+    @Test
+    public void testIsEmpty_GivenStringVoidOrSimple_ShouldReturnVoid() {
+        //Arrange
+        String stringVoid = "";
+        Boolean expectedResult = true;
+        //Act
+        Boolean actualResult = StringUtil.isEmpty(stringVoid);
+        // Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testIsEmpty_GivenNameTest_ShouldReturnTrue() {
+        //Arrange
+        String stringAssessment = "test";
+        Boolean expectedResult = false;
+        //Act
+        Boolean actualResult = StringUtil.isEmpty(stringAssessment);
+        // Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
