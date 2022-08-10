@@ -16,12 +16,16 @@ public class FizzBuzzExerciseTest {
         expectedResultFizzBuzz = "FizzBuzz";
     }
 
+    private static String getActualResult(int assessmentValue) {
+        return FizzBuzzExercise.fizzBuzz(assessmentValue);
+    }
+
     @Test
     public void testFizzBuzzExercise_GivenDivisibleByThree_ShouldReturnFizz() {
         //Arrange
         int assessmentValue = 3;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(expectedResultFizz, actualResult);
     }
@@ -31,7 +35,7 @@ public class FizzBuzzExerciseTest {
         //Arrange
         int assessmentValue = 6;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(expectedResultFizz, actualResult);
     }
@@ -41,7 +45,7 @@ public class FizzBuzzExerciseTest {
         //Arrange
         int assessmentValue = 5;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(expectedResultBuzz, actualResult);
     }
@@ -51,7 +55,7 @@ public class FizzBuzzExerciseTest {
         //Arrange
         int assessmentValue = 10;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(expectedResultBuzz, actualResult);
     }
@@ -61,17 +65,19 @@ public class FizzBuzzExerciseTest {
         //Arrange
         int assessmentValue = 15;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(expectedResultFizzBuzz, actualResult);
     }
+
+
 
     @Test
     public void testFizzBuzzExercise_GivenDivisibleByThirty_ShouldReturnFizzBuzz() {
         //Arrange
         int assessmentValue = 30;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(expectedResultFizzBuzz, actualResult);
     }
@@ -81,7 +87,7 @@ public class FizzBuzzExerciseTest {
         //Arrange
         int assessmentValue = 2;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(String.valueOf(assessmentValue), actualResult);
     }
@@ -91,7 +97,7 @@ public class FizzBuzzExerciseTest {
         //Arrange
         int assessmentValue = 16;
         //Act
-        String actualResult = FizzBuzzExercise.fizzBuzz(assessmentValue);
+        String actualResult = getActualResult(assessmentValue);
         //Assert
         Assertions.assertEquals(String.valueOf(assessmentValue), actualResult);
     }
